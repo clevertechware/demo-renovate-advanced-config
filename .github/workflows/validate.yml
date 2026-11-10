@@ -3,9 +3,11 @@ on:
   pull_request:
   push:
     branches: [main]
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
-      - run: npx --yes --package renovate@44 -- renovate-config-validator --strict *.json
+      - run: npx --yes --package renovate@44 -- renovate-config-validator --strict --no-global *.json

@@ -45,7 +45,7 @@ doit y être installée. `RENOVATE_ONBOARDING=false` garantit qu'un dépôt du f
 
 ## Workflows
 
-- `validate.yml` : exécute `renovate-config-validator --strict` sur tous les presets, à chaque push et pull request.
+- `validate.yml` : exécute `renovate-config-validator --strict --no-global` sur tous les presets, à chaque push et pull request.
 - `renovate.yml` : passage nocturne (02:00 UTC) ou manuel sur tous les dépôts découverts. Requiert la variable
   `RENOVATE_APP_CLIENT_ID` et le secret `RENOVATE_APP_PRIVATE_KEY`. Il échoue tant que l'App n'est pas créée.
 
@@ -55,11 +55,11 @@ n'en contient pas.
 ## Valider en local
 
 ```bash
-npx --yes --package renovate@44 -- renovate-config-validator --strict *.json
+npx --yes --package renovate@44 -- renovate-config-validator --strict --no-global *.json
 ```
 
-Les fichiers passés en argument sont validés comme configuration globale. Une option réservée à l'auto-hébergement
-(`autodiscover`, par exemple) n'y est pas rejetée, y compris dans un preset.
+`--no-global` valide les fichiers comme configuration de dépôt, ce qui rejette une option réservée à l'auto-hébergement
+(`autodiscover`, par exemple), y compris dans un preset.
 
 ## Âge minimal des versions
 
