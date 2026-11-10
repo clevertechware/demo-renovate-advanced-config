@@ -23,7 +23,7 @@ Une flèche va d'un preset vers celui qui l'étend ou l'inclut.
 |---|---|
 | `default` | `enabled: false`. Renovate ne l'applique automatiquement qu'à un dépôt nommé `renovate-config`. |
 | `global` | `config:recommended`, `docker-images`, `github-actions`, dashboard, `minimumReleaseAge` avec `internalChecksFilter: strict`, `gitIgnoredAuthors`, limites de PR. |
-| `docker-images` | Majeures de `postgres` soumises à approbation ; `eclipse-temurin` limité aux versions LTS. |
+| `docker-images` | Pas d'âge minimal pour les datasources `docker` et `java-version` ; majeures de `postgres` soumises à approbation. |
 | `github-actions` | Fusion automatique des mises à jour minor et patch. |
 | `java-base` | Étend `global` ; majeure de `spring-boot-starter-parent` soumise à approbation. |
 | `go-base` | Étend `global` ; `gomodTidy`, `gomodUpdateImportPaths` ; groupe `bun`. |
@@ -60,3 +60,11 @@ npx --yes --package renovate@44 -- renovate-config-validator --strict *.json
 
 Les fichiers passés en argument sont validés comme configuration globale. Une option réservée à l'auto-hébergement
 (`autodiscover`, par exemple) n'y est pas rejetée, y compris dans un preset.
+
+## Âge minimal des versions
+
+`global` fixe `minimumReleaseAge` à 3 jours. Le preset `docker-images` le désactive pour les datasources `docker` et
+`java-version` : avec Renovate 44.225.2, les versions des images `postgres`, `golang` et `eclipse-temurin` arrivent sans date
+de publication, comme celles de `java-version`, et restent en attente. Les tags des images officielles sont aussi repoussés à
+chaque reconstruction, ce qui relance le délai. `config:recommended` limite déjà `eclipse-temurin` aux versions LTS
+(`workarounds:javaLTSVersions`).

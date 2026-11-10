@@ -1,11 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Images Docker : pas d'âge minimal (Docker Hub ne publie pas de date de version), majeures de postgres soumises à approbation, Temurin limité aux versions LTS.",
+  "description": "Images Docker et versions de JDK : pas d'âge minimal, majeures de postgres soumises à approbation.",
   "packageRules": [
     {
-      "description": "Docker Hub ne fournit pas de releaseTimestamp : avec minimumReleaseAge, les mises à jour restent en attente indéfiniment.",
+      "description": "Images Docker : dates de publication absentes ou réinitialisées à chaque reconstruction. Datasource java-version : aucune date de publication. L'âge minimal bloquerait les mises à jour.",
       "matchDatasources": [
-        "docker"
+        "docker",
+        "java-version"
       ],
       "minimumReleaseAge": null
     },
@@ -20,15 +21,6 @@
         "major"
       ],
       "dependencyDashboardApproval": true
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchPackageNames": [
-        "eclipse-temurin"
-      ],
-      "allowedVersions": "/^(8|11|17|21|25)([.-]|$)/"
     }
   ]
 }
