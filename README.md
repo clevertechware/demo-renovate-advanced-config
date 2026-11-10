@@ -41,7 +41,7 @@ Ajouter `.github/renovate.json` au dépôt, sans workflow Renovate local :
 ```
 
 Le nom du dépôt doit correspondre à `clevertechware/demo-renovate-advanced-*` (filtre de découverte) et la GitHub App Renovate
-doit y être installée. Le `renovate.json` étant déjà commité, l'onboarding est désactivé.
+doit y être installée. `RENOVATE_ONBOARDING=false` garantit qu'un dépôt du filtre sans `renovate.json` est ignoré au lieu de recevoir une PR d'onboarding.
 
 ## Workflows
 
