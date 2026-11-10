@@ -1,9 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "GitHub Actions : fusion automatique des mises à jour minor et patch.",
+  "description": "GitHub Actions : fusion automatique des mises à jour minor et patch des actions.",
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
+      "matchDepTypes": ["action"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
