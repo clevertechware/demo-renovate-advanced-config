@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Socle commun : config:recommended, règles Docker et GitHub Actions, délai de maturité, dashboard et limites de PR.",
+  "extends": [
+    "config:recommended",
+    "github>clevertechware/demo-renovate-advanced-config//docker-images",
+    "github>clevertechware/demo-renovate-advanced-config//github-actions"
+  ],
+  "dependencyDashboard": true,
+  "separateMinorPatch": true,
+  "gitIgnoredAuthors": ["41898282+github-actions[bot]@users.noreply.github.com"],
+  "configMigration": true,
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "prConcurrentLimit": 10,
+  "labels": ["renovate"],
+  "vulnerabilityAlerts": { "labels": ["security"] }
+}

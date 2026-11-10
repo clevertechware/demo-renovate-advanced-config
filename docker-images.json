@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Images Docker : majeures de postgres soumises à approbation, Temurin limité aux versions LTS.",
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["postgres"],
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["eclipse-temurin"],
+      "allowedVersions": "/^(8|11|17|21|25)([.-]|$)/"
+    }
+  ]
+}
