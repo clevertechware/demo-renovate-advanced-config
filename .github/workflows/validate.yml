@@ -1,0 +1,11 @@
+name: Validate presets
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - run: npx --yes --package renovate@44 -- renovate-config-validator --strict *.json
