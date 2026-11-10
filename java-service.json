@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Service Java : point d'entrée des dépôts de service, étend java-base.",
+  "extends": ["github>clevertechware/demo-renovate-advanced-config//java-base"]
+}

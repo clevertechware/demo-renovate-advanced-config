@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Base Go : go mod tidy après mise à jour et regroupement des modules uptrace/bun.",
+  "extends": ["github>clevertechware/demo-renovate-advanced-config//global"],
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["github.com/uptrace/bun", "github.com/uptrace/bun/**"],
+      "groupName": "bun"
+    }
+  ]
+}

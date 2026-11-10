@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Dépôts d'infrastructure (Compose, workflows) : socle global sans règle supplémentaire.",
+  "extends": ["github>clevertechware/demo-renovate-advanced-config//global"]
+}

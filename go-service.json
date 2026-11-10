@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Service Go : point d'entrée des dépôts de service, étend go-base.",
+  "extends": ["github>clevertechware/demo-renovate-advanced-config//go-base"]
+}
