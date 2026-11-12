@@ -6,7 +6,7 @@
     "github>clevertechware/demo-renovate-advanced-config//docker-images",
     "github>clevertechware/demo-renovate-advanced-config//github-actions"
   ],
-  "dependencyDashboard": true,
+  "dependencyDashboard": { "enabled": true },
   "separateMinorPatch": true,
   "gitIgnoredAuthors": ["41898282+github-actions[bot]@users.noreply.github.com"],
   "configMigration": true,
