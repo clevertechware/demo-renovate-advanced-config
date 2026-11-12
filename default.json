@@ -1,5 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Configuration par défaut de l'organisation : désactive Renovate sur les dépôts qui n'étendent aucun preset.",
+  "description": "Preset lu quand un dépôt référence ce dépôt sans nommer de preset : désactive Renovate pour forcer le choix d'un preset explicite.",
   "enabled": false
 }
