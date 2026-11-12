@@ -3,7 +3,7 @@
   "description": "Images Docker et versions de JDK : pas d'âge minimal, majeures de postgres soumises à approbation.",
   "packageRules": [
     {
-      "description": "Images Docker : dates de publication absentes ou réinitialisées à chaque reconstruction. Datasource java-version : aucune date de publication. L'âge minimal bloquerait les mises à jour.",
+      "description": "Images Docker et datasource java-version : versions reçues sans date de publication. L'âge minimal les laisserait en attente.",
       "matchDatasources": [
         "docker",
         "java-version"
