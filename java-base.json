@@ -1,8 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Base Java/Maven : majeure de Spring Boot soumise à approbation via le Dependency Dashboard.",
+  "description": "Base Java/Maven : fusion automatique des minor et patch Maven, majeure de Spring Boot soumise à approbation via le Dependency Dashboard.",
   "extends": ["github>clevertechware/demo-renovate-advanced-config//global"],
   "packageRules": [
+    {
+      "matchManagers": ["maven", "maven-wrapper"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
     {
       "matchPackageNames": ["org.springframework.boot:spring-boot-starter-parent"],
       "matchUpdateTypes": ["major"],

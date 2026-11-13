@@ -23,10 +23,10 @@ Une flèche va d'un preset vers celui qui l'étend ou l'inclut.
 |---|---|
 | `default` | `enabled: false`. Renovate ne l'applique automatiquement qu'à un dépôt nommé `renovate-config`. |
 | `global` | `config:recommended`, `docker-images`, `github-actions`, dashboard, `minimumReleaseAge` avec `internalChecksFilter: strict`, `gitIgnoredAuthors`, limites de PR. |
-| `docker-images` | Pas d'âge minimal pour les datasources `docker` et `java-version` ; majeures de `postgres` soumises à approbation. |
+| `docker-images` | Pas d'âge minimal pour les datasources `docker` et `java-version` ; fusion automatique des minor et patch des images Docker ; majeures de `postgres` soumises à approbation. |
 | `github-actions` | Fusion automatique des mises à jour minor et patch des actions (`matchDepTypes: ["action"]`). |
-| `java-base` | Étend `global` ; majeure de `spring-boot-starter-parent` soumise à approbation. |
-| `go-base` | Étend `global` ; `gomodTidy`, `gomodUpdateImportPaths` ; groupe `bun`. |
+| `java-base` | Étend `global` ; fusion automatique des minor et patch Maven (`maven`, `maven-wrapper`) ; majeure de `spring-boot-starter-parent` soumise à approbation. |
+| `go-base` | Étend `global` ; `gomodTidy`, `gomodUpdateImportPaths` ; groupe `bun` ; fusion automatique des minor et patch des modules (`gomod`). |
 | `infra` | Étend `global`. |
 | `java-service`, `go-service` | Étendent `java-base` et `go-base` ; point d'entrée des dépôts de service. |
 
