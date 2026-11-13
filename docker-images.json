@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Images Docker et versions de JDK : pas d'âge minimal, majeures de postgres soumises à approbation.",
+  "description": "Images Docker et versions de JDK : pas d'âge minimal, fusion automatique des minor et patch des images, majeures de postgres soumises à approbation.",
   "packageRules": [
     {
       "description": "Images Docker et datasource java-version : versions reçues sans date de publication. L'âge minimal les laisserait en attente.",
@@ -9,6 +9,16 @@
         "java-version"
       ],
       "minimumReleaseAge": null
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
     },
     {
       "matchDatasources": [
